@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <title>Ip Address Tracker</title>
+  </head>
+  <body>
+    <div class="bg-blue-400 w-full h-[260px]">
+      <h1 class="flex justify-center font-bold text-4xl text-white p-9">
+        IP Address Tracker
+      </h1>
+      <div class="relative flex justify-center">
+        <input
+          type="text"
+          placeholder="Search for any IP address or domain"
+          class="w-[300px] md:w-[700px] border-black border rounded p-3 pr-14 bg-white"
+          id="search"
+        />
+        <div
+          class="absolute right-12 md:right-48 top-0 h-full w-14 flex items-center justify-center bg-black rounded-r text-white"
+          id="button"
+        >
+          <svg
+            fill="#000000"
+            viewBox="0 0 24 24"
+            id="right-arrow-direction-square"
+            data-name="Flat Color"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon flat-color w-6"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <rect
+                id="primary"
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="2"
+                style="fill: #000000"
+              ></rect>
+              <path
+                id="secondary"
+                d="M17.62,11.31,14.5,9.17a1,1,0,0,0-1.5.69V11H7a1,1,0,0,0,0,2h6v1.14a1,1,0,0,0,1.5.69l3.12-2.14A.82.82,0,0,0,17.62,11.31Z"
+                style="fill: #ffffff"
+              ></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- the card -->
+    <div
+      class="absolute z-10 top-52 left-[50px] md:left-[100px] w-[83%] bg-white h-[300px] md:h-[100px] p-3 md:p-6 rounded-2xl md:rounded flex-col md:flex-row flex items-center md:justify-between"
+    >
+      <!-- IP Address -->
+      <div class="relative w-1/4">
+        <p
+          class="text-[10px] md:text-sm font-bold text-gray-300 tracking-[5px] mb-1"
+        >
+          IP ADDRESS
+        </p>
+        <h3 id="ipAddress" class="font-semibold md:font-bold">
+          192.212.174.101
+        </h3>
+
+        <div
+          class="hidden md:absolute right-0 top-1/2 -translate-y-1/2 w-px h-10 bg-gray-300 mr-6"
+        ></div>
+      </div>
+
+      <!-- Location -->
+      <div class="relative w-1/4">
+        <p
+          class="text-[10px] md:text-sm font-bold text-gray-300 tracking-[5px] mb-1"
+        >
+          LOCATION
+        </p>
+        <h3 id="locationValue" class="font-semibold md:font-bold">
+          Brooklyn, NY 10001
+        </h3>
+
+        <div
+          class="hidden md:absolute right-0 top-1/2 -translate-y-1/2 w-px h-10 bg-gray-300 mr-6"
+        ></div>
+      </div>
+
+      <!-- Timezone -->
+      <div class="relative w-1/4">
+        <p
+          class="text-[10px] md:text-sm font-bold text-gray-300 tracking-[5px] mb-1"
+        >
+          TIMEZONE
+        </p>
+        <h3 id="timezoneValue" class="font-semibold md:font-bold">
+          UTC -05:00
+        </h3>
+
+        <div
+          class="hidden md:absolute right-0 top-1/2 -translate-y-1/2 w-px h-10 bg-gray-300 mr-6"
+        ></div>
+      </div>
+
+      <!-- ISP -->
+      <div class="relative w-1/4">
+        <p
+          class="text-[10px] md:text-sm font-bold text-gray-300 tracking-[5px] mb-1"
+        >
+          ISP
+        </p>
+        <h3 id="ispValue" class="font-semibold md:font-bold">
+          SpaceX Starlink
+        </h3>
+      </div>
+    </div>
+
+    <!-- The map -->
+    <div class="relative z-0 w-full h-[600px]" id="map"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
