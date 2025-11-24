@@ -198,8 +198,14 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .right-7 {
+    right: calc(var(--spacing) * 7);
+  }
   .right-8 {
     right: calc(var(--spacing) * 8);
+  }
+  .right-9 {
+    right: calc(var(--spacing) * 9);
   }
   .right-12 {
     right: calc(var(--spacing) * 12);
