@@ -341,8 +341,15 @@
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
   .text-\[10px\] {
     font-size: 10px;
+  }
+  .text-\[12px\] {
+    font-size: 12px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
